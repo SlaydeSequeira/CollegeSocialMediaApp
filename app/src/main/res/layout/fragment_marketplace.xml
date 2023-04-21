@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.MarketplaceFragment"
     android:id="@+id/hello"
     android:background="@color/black">
@@ -12,5 +13,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ic_baseline_add_24"
+        android:elevation="100dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="100dp"
+        app:cardBackgroundColor="#15D11C"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_baseline_add_24"
+            />
+
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>
