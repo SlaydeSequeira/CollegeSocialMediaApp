@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="1dp"
+    android:background="@drawable/trial"
+    tools:context=".Fragments.RegisterFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:text="List of registered members View access for admins only"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycle1"
+        android:layout_below="@+id/text" />
+
+</RelativeLayout>

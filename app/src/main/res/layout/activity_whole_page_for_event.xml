@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Whole_Page_For_Event"
+    android:id="@+id/register"
+    android:background="@drawable/trial">
+
+    <TextView
+        android:id="@+id/textinrecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#00AE26"
+        android:text="Register" />
+
+    <ImageView
+        android:id="@+id/imageinrecycler"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/author"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageinrecycler"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:text="This is the description"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinrecycler"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:text="by anonymous"
+        android:textColor="@color/black" />
+
+  </RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/chat_icon.xml" value="0.2485" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/gradient.xml" value="0.2485" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/home_icon.xml" value="0.2485" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2485" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/ic_baseline_profile.xml" value="0.1725" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1725" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/market_icon.xml" value="0.2485" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/search_icon.xml" value="0.165" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/drawable/trial.xml" value="0.2515" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_add_journam.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_message.xml" value="0.16" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_new_post.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/activity_whole_page_for_event.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/background_left.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/chat_item_left.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/chat_item_right.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_home.xml" value="0.2359375" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_marketplace.xml" value="0.16" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/fragment_sign_out.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/nav_header.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/recycler_add.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/sell_stuff.xml" value="0.1" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/text.xml" value="0.20050125313283207" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/layout/user_item.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/menu/dmenu.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/Slayde/AndroidStudioProjects/DataBase/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2485" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Embedded JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
