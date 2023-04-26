@@ -85,6 +85,11 @@ public class additem extends AppCompatActivity {
                             hashMap2.put(temp10, b);
                             myRef.child("cost").updateChildren(hashMap2);
                             flag=0;
+                            HashMap<String, Object> hashMap3 = new HashMap<>();
+                            temporary=temporary+1;
+                            temp10=String.valueOf(temporary);
+                            hashMap3.put("count", temp10);
+                            myRef.updateChildren(hashMap3);
                         }
                     }
 
