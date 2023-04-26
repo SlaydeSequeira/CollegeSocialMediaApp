@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         imageView = view.findViewById(R.id.profile_image2);
-        username  = view.findViewById(R.id.usernamer);
+        username  = view.findViewById(R.id.username);
 
 
 

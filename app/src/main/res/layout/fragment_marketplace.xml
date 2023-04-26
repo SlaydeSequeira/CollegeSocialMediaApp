@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.MarketplaceFragment"
     android:id="@+id/hello"
-    android:background="@color/black">
+    android:background="#9a9999">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViews"
@@ -30,7 +30,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:cardCornerRadius="100dp"
-        app:cardBackgroundColor="#15D11C"
+        app:cardBackgroundColor="#153ED1"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="24dp"
         android:layout_alignParentEnd="true"

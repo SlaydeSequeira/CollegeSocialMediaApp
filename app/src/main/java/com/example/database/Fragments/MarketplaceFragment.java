@@ -82,6 +82,8 @@ public class MarketplaceFragment extends Fragment {
             }
         });
 
+
         return  view;
     }
+
 }

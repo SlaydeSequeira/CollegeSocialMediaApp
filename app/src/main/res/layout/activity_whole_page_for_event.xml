@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Whole_Page_For_Event"
     android:id="@+id/register"
-    android:background="@drawable/trial">
+    android:background="#C5BFBF">
 
     <TextView
         android:id="@+id/textinrecycler"

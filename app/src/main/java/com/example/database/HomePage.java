@@ -156,12 +156,6 @@ public class HomePage extends AppCompatActivity {
             return fragments.size();
         }
 
-        public void addFragment(Fragment fragment, String title){
-            fragments.add(fragment);
-            titles.add(title);
-        }
-
-
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
@@ -202,22 +196,13 @@ public class HomePage extends AppCompatActivity {
 
     private void replace (Fragment fragment)
     {
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.test,fragment);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.test, fragment);
+        fragmentTransaction.addToBackStack(null); // add the current fragment to the back stack
         fragmentTransaction.commit();
     }
 
-
-    public void onBackPressed()
-    {
-        int count = getSupportFragmentManager().getBackStackEntryCount();
-        if(count==0){
-            super.onBackPressed();
-        }else{
-            getSupportFragmentManager().popBackStack();
-        }
-    }
 
 
 }

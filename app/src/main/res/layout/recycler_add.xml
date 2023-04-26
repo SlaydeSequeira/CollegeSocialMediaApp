@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
     android:background="#454547"
-    android:outlineAmbientShadowColor="@color/black"
+    android:outlineAmbientShadowColor="#9a9999"
     >
 
     <RelativeLayout
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/author"
         android:id="@+id/cardView"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="#9a9999"
         app:cardCornerRadius="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"

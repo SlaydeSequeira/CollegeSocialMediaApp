@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/trial"
+    android:background="#9a9999"
     >
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:cardCornerRadius="100dp"
-        app:cardBackgroundColor="#15D11C"
+        app:cardBackgroundColor="#3F51B5"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="24dp"
         android:layout_alignParentEnd="true"
