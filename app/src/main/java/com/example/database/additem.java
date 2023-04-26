@@ -40,8 +40,8 @@ public class additem extends AppCompatActivity {
     String temp,temp1,temp2,temp10;
     EditText editText,editText2,editText3;
     Button button,button1;
-    String c,a;
-    int flag=0;
+    String a,b,c;
+    int flag=0,temporary;
     ImageView imageView;
     String username;
 
@@ -53,8 +53,50 @@ public class additem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additem);
+        Button btn = findViewById(R.id.buttonPanel);
+        Button btn1= findViewById(R.id.submit_btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage();
+            }
+        });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flag=1;
+                EditText e = findViewById(R.id.edit);
+                EditText f = findViewById(R.id.edit2);
+                a=e.getText().toString();
+                b=f.getText().toString();
+                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = firebaseDatabase.getReference("market");
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        while (flag==1) {
+                            temp10 = String.valueOf(snapshot.child("count").getValue());
+                            temporary = Integer.parseInt(temp10);
+                            uploadImage(temporary);
+                            HashMap<String, Object> hashMap1 = new HashMap<>();
+                            hashMap1.put(temp10, a);
+                            myRef.child("Title").updateChildren(hashMap1);
+                            HashMap<String, Object> hashMap2 = new HashMap<>();
+                            hashMap2.put(temp10, b);
+                            myRef.child("cost").updateChildren(hashMap2);
+                            flag=0;
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
     }
-    private void uploadImage(int count,Uri uri) {
+    private void uploadImage(int count) {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading File....");
@@ -135,12 +177,4 @@ public class additem extends AppCompatActivity {
 
         }
     }
-
-
-
-
-
-
-
-
 }

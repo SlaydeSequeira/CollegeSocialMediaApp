@@ -90,7 +90,7 @@
             android:layout_height="50dp"
             android:layout_below="@+id/edit2"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="49dp"
+            android:layout_marginTop="42dp"
             android:layout_marginEnd="99dp"
             android:backgroundTint="#3a1285"
             android:text="Select Image" />
