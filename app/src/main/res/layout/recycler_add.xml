@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
-    android:background="#454547"
+    android:background="#FBC2F6"
     android:outlineAmbientShadowColor="#9a9999"
     >
 
@@ -15,11 +15,17 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_below="@+id/description"
-            android:background="@color/black"
+            android:layout_height="7dp"
+            android:layout_below="@+id/rela"
+            android:background="#E47D7D"
             > </LinearLayout>
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rel"
+    android:background="#680101"
+    >
 
         <TextView
             android:id="@+id/textinrecycler"
@@ -41,28 +47,39 @@
             android:textSize="10dp"
             android:text="by anonymous"
             android:textColor="@color/white" />
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
+</RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/cardView"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
+            android:id="@+id/rela"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
-            android:text="Description"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="10dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/author"
+        android:layout_height="350dp"
+        android:layout_below="@+id/rel"
         android:id="@+id/cardView"
-        app:cardBackgroundColor="#9a9999"
+        app:cardBackgroundColor="#9A9999"
         app:cardCornerRadius="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
+
         android:elevation="10dp"
         android:outlineAmbientShadowColor="@color/black"
 >
@@ -74,8 +91,8 @@
 
         <ImageView
             android:id="@+id/imageinrecycler"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="25dp"
