@@ -63,7 +63,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
    holder.itemView.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
-           Toast.makeText(context, "You clicked "+data[position], Toast.LENGTH_SHORT).show();
            Intent intent= new Intent(view.getContext(),Whole_Page_For_Event.class);
            String tempA=data[position], tempB=data2[position],tempC=picture[position], tempD=Author[position];
            intent.putExtra("A",tempA);

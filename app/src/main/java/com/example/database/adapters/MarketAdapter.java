@@ -66,10 +66,8 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
         Glide.with(context)
                 .load(image2[position])
                 .into(holder.imageView2);
-        if(cost2[position]!= null) {
             holder.textView3.setText("Rs " + cost1[position]);
             holder.textView4.setText("Rs " + cost2[position]);
-        }
     }
 
     @Override

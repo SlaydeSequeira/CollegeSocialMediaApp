@@ -13,7 +13,7 @@
         android:id="@+id/toolbar3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/purple_700"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,9 @@
             android:id="@+id/imageview_profile"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:background="@drawable/circular_background"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:textStyle="bold"
@@ -33,6 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="clip_vertical|start"
+            android:textColor="@color/black"
+            android:textSize="24dp"
             android:text="TextView" />
 
     </androidx.appcompat.widget.Toolbar>
@@ -73,7 +77,7 @@
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/btn_send"
             android:hint="Type a Message..."
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/black"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
