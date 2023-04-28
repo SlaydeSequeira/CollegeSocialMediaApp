@@ -94,14 +94,14 @@ public class HomePage extends AppCompatActivity {
         pagerAdapter.addFragment(new SearchFragment(),"Search");
         pagerAdapter.addFragment(new ChatFragment(),"Chat");
         pagerAdapter.addFragment(new ProfileFragment(),"Profile");
+        pagerAdapter.addFragment(new NoticeFragment(),"Notices");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.home_icon);
         tabLayout.getTabAt(1).setIcon(R.drawable.search_icon);
         tabLayout.getTabAt(2).setIcon(R.drawable.chat_icon);
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_baseline_profile);
-
-
+        tabLayout.getTabAt(4).setIcon(R.drawable.baseline_announcement_24);
     }
 
 
