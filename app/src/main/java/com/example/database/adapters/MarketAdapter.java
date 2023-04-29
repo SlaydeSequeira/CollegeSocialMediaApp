@@ -14,33 +14,40 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.database.R;
 
-public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder>{
+public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder> {
     private final Context context;
     private final String[] title;
     private final int count;
     private final String[] cost;
     private final String[] image;
-    private String[] image2 = new String[100];
-    private String[] image1 = new String[100];
-    private String[] cost2 = new String[100];
-    private String[] cost1 = new String[100];
-    private String[] title2 = new String[100];
-    private String[] title1 = new String[100];
+    private final String[] image2;
+    private final String[] image1;
+    private final String[] cost2;
+    private final String[] cost1;
+    private final String[] title2;
+    private final String[] title1;
 
     public MarketAdapter(Context context, String[] title, String[] cost, int count, String[] image) {
         this.image = image;
         this.cost = cost;
-        this.context= context;
-        for(int i=0;i<count;i++) {
-            if(i%2==0) {
-                title1[(i) / 2] = title[i];
-                cost1[(i) / 2] = cost[i];
-                image1[i/2]=image[i];
+        this.context = context;
+        int numItems = (count + 1) / 2;
+        title1 = new String[numItems];
+        cost1 = new String[numItems];
+        image1 = new String[numItems];
+        title2 = new String[numItems];
+        cost2 = new String[numItems];
+        image2 = new String[numItems];
+        for(int i = 0; i < count; i++) {
+            if(i % 2 == 0) {
+                title1[i / 2] = title[i];
+                cost1[i / 2] = cost[i];
+                image1[i / 2] = image[i];
             }
             else {
-                title2[(i) / 2] = title[i];
-                cost2[(i)/2] = cost[i];
-                image2[i/2]=image[i];
+                title2[i / 2] = title[i];
+                cost2[i / 2] = cost[i];
+                image2[i / 2] = image[i];
             }
         }
         this.title = title;
@@ -50,10 +57,9 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.sell_stuff,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.sell_stuff, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -66,37 +72,39 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
         Glide.with(context)
                 .load(image2[position])
                 .into(holder.imageView2);
-            holder.textView3.setText("Rs " + cost1[position]);
+
+        // Set the cost text for left item
+        holder.textView3.setText("Rs " + cost1[position]);
+
+        // Set the cost text for right item, or make it blank if it is null
+        if (cost2[position] != null) {
             holder.textView4.setText("Rs " + cost2[position]);
+        } else {
+            holder.textView4.setText("");
+        }
     }
 
     @Override
     public int getItemCount() {
-        return (count+1)/2;
+        return (count + 1) / 2;
     }
 
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView1;
         TextView textView2;
         TextView textView3;
         TextView textView4;
         ImageView imageView1;
         ImageView imageView2;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView1=itemView.findViewById(R.id.text1);
-            textView2=itemView.findViewById(R.id.text2);
-            textView3=itemView.findViewById(R.id.cost1);
-            textView4=itemView.findViewById(R.id.cost2);
-            imageView1=itemView.findViewById(R.id.image1);
-            imageView2=itemView.findViewById(R.id.image2);
+            textView1 = itemView.findViewById(R.id.text1);
+            textView2 = itemView.findViewById(R.id.text2);
+            textView3 = itemView.findViewById(R.id.cost1);
+            textView4 = itemView.findViewById(R.id.cost2);
+            imageView1 = itemView.findViewById(R.id.image1);
+            imageView2 = itemView.findViewById(R.id.image2);
         }
     }
 }
-
-
-
-
-
-

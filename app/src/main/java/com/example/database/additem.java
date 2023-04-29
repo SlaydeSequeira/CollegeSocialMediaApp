@@ -102,7 +102,6 @@ public class additem extends AppCompatActivity {
         });
     }
     private void uploadImage(int count) {
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading File....");
         progressDialog.show();
@@ -111,7 +110,6 @@ public class additem extends AppCompatActivity {
         String fileName = formatter.format(now);
         storageReference = FirebaseStorage.getInstance().getReference("images/"+fileName+".jpg");
         try {
-
             storageReference.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -131,13 +129,11 @@ public class additem extends AppCompatActivity {
                                     hashMap4.put(c , a);
                                     myRef4.updateChildren(hashMap4);
 
-                                    //I have no idea what it is but apparently app uploads has it
-                                    // acc to me it just crashes the app
-                                    // Note to self (slayde) see if it necessary
-                                    // progressDialog.dismiss();
+                                    // Dismiss the progress dialog
+                                    progressDialog.dismiss();
 
-
-
+                                    // Clear the imageUri variable
+                                    imageUri = null;
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -145,7 +141,6 @@ public class additem extends AppCompatActivity {
                                     Toast.makeText(additem.this, "Failed", Toast.LENGTH_SHORT).show();
                                 }
                             });
-
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -155,10 +150,10 @@ public class additem extends AppCompatActivity {
                             Toast.makeText(additem.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
                         }
                     });
-        }catch (Exception e){
-
+        } catch (Exception e) {
         }
     }
+
 
 
     private void selectImage() {
