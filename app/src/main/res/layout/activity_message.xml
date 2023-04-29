@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@android:color/white"
         >
+
         <androidx.cardview.widget.CardView
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -33,6 +34,7 @@
             android:background="@drawable/circular_background"
             android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:textStyle="bold"
@@ -74,6 +76,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+
+        <EditText
+            android:id="@+id/text_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_send"
+            android:hint="Type a Message..."
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <ImageButton
             android:id="@+id/btn_send"
