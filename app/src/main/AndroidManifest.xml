@@ -20,6 +20,9 @@
         android:theme="@style/Theme.DataBase"
         tools:targetApi="31">
         <activity
+            android:name=".Buy"
+            android:exported="false" />
+        <activity
             android:name=".AdminPage"
             android:exported="false" />
         <activity

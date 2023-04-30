@@ -1,6 +1,8 @@
 package com.example.database.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.database.Buy;
 import com.example.database.R;
 
 public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder> {
@@ -63,7 +65,7 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textView1.setText(title1[position]);
         holder.textView2.setText(title2[position]);
         Glide.with(context)
@@ -82,6 +84,30 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
         } else {
             holder.textView4.setText("");
         }
+        holder.imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(view.getContext(), Buy.class);
+                intent.putExtra("a",title1[position]);
+                intent.putExtra("b",cost1[position]);
+                intent.putExtra("c",image1[position]);
+                String pos= String.valueOf(2*position);
+                intent.putExtra("d",pos);
+                view.getContext().startActivity(intent);
+            }
+        });
+        holder.imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(view.getContext(),Buy.class);
+                intent.putExtra("a",title2[position]);
+                intent.putExtra("b",cost2[position]);
+                intent.putExtra("c",image2[position]);
+                String pos= String.valueOf(2*position+1);
+                intent.putExtra("d",pos);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
