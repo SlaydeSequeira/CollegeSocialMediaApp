@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".NoticeFragment"
     android:id="@+id/test"
-    android:background="#ACACAC"
+    android:background="#9a9999"
     >
 </androidx.recyclerview.widget.RecyclerView>
