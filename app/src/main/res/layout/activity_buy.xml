@@ -17,7 +17,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#6A6969">
+            android:background="#6A6968">
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="242dp"
