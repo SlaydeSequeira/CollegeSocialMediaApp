@@ -17,8 +17,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.database.Model.Users;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -111,46 +113,50 @@ public class additem extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference("images/"+fileName+".jpg");
         try {
             storageReference.putFile(imageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            imageView = findViewById(R.id.image_view);
-                            imageView.setImageURI(imageUri);
-                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    String a= uri.toString();
-                                    Toast.makeText(additem.this, "Successfully Uploaded", Toast.LENGTH_SHORT).show();
-                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                    DatabaseReference myRef4 = database.getReference("market").child("image");
+                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                            try {
+                                if (task.isSuccessful()) {
+                                    imageView = findViewById(R.id.image_view);
+                                    imageView.setImageURI(imageUri);
+                                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            String a= uri.toString();
+                                            Toast.makeText(additem.this, "Successfully Uploaded", Toast.LENGTH_SHORT).show();
+                                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                            DatabaseReference myRef4 = database.getReference("market").child("image");
 
-                                    c=String.valueOf(count);
-                                    HashMap<String, Object> hashMap4 = new HashMap<>();
-                                    hashMap4.put(c , a);
-                                    myRef4.updateChildren(hashMap4);
+                                            c=String.valueOf(count);
+                                            HashMap<String, Object> hashMap4 = new HashMap<>();
+                                            hashMap4.put(c , a);
+                                            myRef4.updateChildren(hashMap4);
 
-                                    // Dismiss the progress dialog
+                                            // Clear the imageUri variable
+                                            imageUri = null;
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(additem.this, "Failed", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                } else {
+                                    Toast.makeText(additem.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (Exception e) {
+                                // handle exception
+                            } finally {
+                                // Dismiss the progress dialog
+                                if (progressDialog != null && progressDialog.isShowing()) {
                                     progressDialog.dismiss();
-
-                                    // Clear the imageUri variable
-                                    imageUri = null;
                                 }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(additem.this, "Failed", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            if (progressDialog.isShowing())
-                                progressDialog.dismiss();
-                            Toast.makeText(additem.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
         } catch (Exception e) {
+            // handle exception
         }
     }
 

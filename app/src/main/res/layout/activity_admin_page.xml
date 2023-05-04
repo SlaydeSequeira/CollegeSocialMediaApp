@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Provide Your Feedback"
+        android:text="Notice"
         android:textColor="@color/black"
         android:textSize="30dp"
         android:textStyle="bold" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Feedback here"
+        android:hint="Enter the notice here"
         android:background="#4CAF50"
         android:id="@+id/edit"
         android:layout_below="@+id/text"
